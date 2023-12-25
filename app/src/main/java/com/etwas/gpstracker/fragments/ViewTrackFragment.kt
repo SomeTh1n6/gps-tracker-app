@@ -73,8 +73,8 @@ class ViewTrackFragment : Fragment() {
         val finishMarker = Marker(map)
         startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
         finishMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-        startMarker.icon = getDrawable(requireContext(), R.drawable.ic_start_position)
-        finishMarker.icon = getDrawable(requireContext(), R.drawable.ic_finish_position)
+        startMarker.icon = getDrawable(requireContext(), R.drawable.ic_finish_position)
+        finishMarker.icon = getDrawable(requireContext(), R.drawable.ic_start_position)
         startMarker.position = list[0]
         finishMarker.position = list[list.size - 1]
         map.overlays.add(startMarker)

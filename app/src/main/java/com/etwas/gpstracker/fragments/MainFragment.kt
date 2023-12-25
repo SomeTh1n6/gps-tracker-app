@@ -73,7 +73,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registerPermissions()
-        checkLocPermission()
+
         setOnClicks()
         checkServiceState()
         updateTime()
@@ -158,6 +158,7 @@ class MainFragment : Fragment() {
         } else {
            activity?.stopService(Intent(activity, LocationService::class.java))
            binding.fStartStop.setImageResource(R.drawable.ic_play)
+
            timer?.cancel()
            val track = getTrackItem()
            DialogManager.showSaveDialog(requireContext(),
@@ -206,6 +207,7 @@ class MainFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        checkLocPermission()
         firstStart = true
     }
 
